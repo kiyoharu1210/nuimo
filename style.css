@@ -124,7 +124,7 @@ footer a:hover {
 
 @media screen and (min-width: 768px) {
     footer {
-    margin-top: 200px;
+        margin-top: 200px;
         height: 250px;
     }
 }
@@ -487,7 +487,7 @@ footer a:hover {
     }
 
     .place {
-        margin-left: 150px;
+        margin: 0 0 0 150px;
     }
 
     .place p {
@@ -530,19 +530,62 @@ footer a:hover {
 
 /* メニュー */
 .home-menu img {
-    width: 320px;
+    width: 110px;
     height: auto;
-    margin: 0 auto;
+    margin: 2px;
 }
 
-.autoplay li {
-    width: 300px;
+.multiple-items {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
 }
 
-.slick-slider {
-    margin-left: 20vw;
-    margin-right: 20vw;
+.image a {
+    display: block;
+    position: relative;
 }
+
+.image a::before {
+    content: "Come here!";
+    width: 110px;
+    height: 110px;
+    background: #0D62FF;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.image img {
+    width: 100%;
+}
+
+.image a:hover::before {
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .home-menu img {
+        width: 320px;
+        margin: 10px;
+    }
+
+    .image a::before {
+        width: 320px;
+        height: 320px;
+
+    }
+}
+
+
 
 /* ぬいぐるみができるまで */
 .pro-1 {
@@ -668,8 +711,9 @@ footer a:hover {
     }
 
     .btn03 {
-    box-shadow: #EE553A 6px 6px;
+        box-shadow: #EE553A 6px 6px;
     }
+
     .btn03 span {
         padding: 10px 80px;
         font-size: 20px;
